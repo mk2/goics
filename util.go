@@ -22,3 +22,21 @@ func GetJapanTimezoneTemplate() *Component {
 		},
 	}
 }
+
+/*
+GetICSTemplateJapan タイムゾーン日本で必要な情報をあらかじめ入れた状態で返す
+ */
+func GetICSTemplateJapan(comps... *Component) *ICS {
+	return &ICS{
+		RootComponent: &Component{
+			Name: VCALENDAR,
+			Values: map[string]string{
+				PRODID: "-//mk2//ICSMailer//EN",
+				VERSION: "2.0",
+				METHOD: "PUBLISH",
+			},
+			SubComponents:
+				append([]*Component{GetJapanTimezoneTemplate()}, comps...),
+		},
+	}
+}
