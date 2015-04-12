@@ -19,7 +19,6 @@ func TestSimpleICSWrite(t *testing.T) {
 		Values: map[string]string{
 			PRODID: prodid,
 		},
-		SubComponents: make([]*Component, 0),
 	}
 	ics := &ICS{
 		RootComponent: rc,
@@ -55,7 +54,7 @@ func TestComplexICSWrite(t *testing.T) {
 		Values: map[string]string{
 			PRODID: prodid,
 		},
-		SubComponents: []*Component{sc},
+		SubComponents: []*Component{GetJapanTimezoneTemplate(), sc},
 	}
 	ics := &ICS{
 		RootComponent: rc,

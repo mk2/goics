@@ -5,29 +5,16 @@ import (
 	"io"
 )
 
-const (
-	BEGIN = "BEGIN:"
-	END   = "END:"
-)
-
-const (
-	VCALENDAR = "VCALENDAR"
-	VTIMEZONE = "VTIMEZONE"
-	STANDARD  = "STANDARD"
-	EVENT     = "VEVENT"
-)
-
-const (
-	PRODID    = "PRODID:"
-	VERSION   = "VERSION:"
-	METHOD    = "METHOD:"
-	ORGANIZER = "ORGANIZER:"
-)
-
+/*
+ICS .ics file struct
+ */
 type ICS struct {
 	RootComponent *Component
 }
 
+/*
+Component a component .ics file contains
+ */
 type Component struct {
 	Name          string
 	Values        map[string]string
