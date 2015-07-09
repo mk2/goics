@@ -1,0 +1,3 @@
+[submodule "goisgod"]
+	path = goisgod
+	url = https://github.com/mk2/goisgod
